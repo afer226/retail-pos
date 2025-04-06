@@ -1,0 +1,246 @@
+/* src/App.css */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+#root {
+  /* Remove max-width and margin auto if you want full width */
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  padding: 0; /* Reset padding, handle within layout */
+}
+
+/* New App Layout Container */
+.app-layout {
+  display: flex; /* Enables Flexbox */
+  min-height: 100vh; /* Optional: makes layout take full viewport height */
+}
+
+/* Sidebar Navigation Styling */
+.sidebar-nav {
+  width: 200px; /* Set the width of the sidebar */
+  background-color: #333;
+  padding: 1.5rem 1rem; /* Adjust padding as needed */
+  height: 100vh; /* Make sidebar full height */
+  /* Optional: make it stay fixed while content scrolls */
+  /* position: sticky;
+     top: 0; */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* No longer need flex here, items will stack vertically by default */
+}
+
+.sidebar-nav ul li {
+  margin-bottom: 1rem; /* Space between nav items */
+}
+
+.sidebar-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block; /* Make link take full width of li */
+  padding: 0.5rem 1rem; /* Add padding for better click area */
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-nav ul li a:hover {
+  background-color: #555; /* Subtle background hover */
+  color: #fff;
+}
+
+.sidebar-nav ul li a.active {
+  background-color: gray; /* Highlight active link */
+  color: #fff;
+  font-weight: bold;
+}
+
+
+/* Main Content Area Styling */
+.page-container { /* Targets the <main> element */
+  flex: 1; /* Takes up the remaining horizontal space */
+  padding: 2rem; /* Padding for the content */
+  background-color: #fff; /* Keep white background distinct from body */
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* Optional subtle shadow */
+  /* If sidebar is sticky, content needs its own scroll */
+  /* overflow-y: auto; */
+  /* height: 100vh; */ /* Needed if using sticky sidebar */
+  box-sizing: border-box;
+}
+
+
+/* --- Keep other specific styles below --- */
+
+h1, h2 {
+  color: #333;
+  margin-top: 0; /* Good practice for headings in containers */
+}
+
+/* Selling Page Specific */
+.selling-layout {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+/* Adjust flex basis for responsiveness if needed */
+.product-list, .current-sale {
+  flex: 1;
+  min-width: 300px; /* Prevent them getting too squished */
+}
+
+
+/* ... (rest of your existing styles for product-item, cart-item, tables, etc.) ... */
+
+.product-item, .cart-item {
+  border: 1px solid #eee;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow button/text wrap */
+  gap: 0.5rem;
+}
+
+.product-item button, .current-sale button {
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+.current-sale .remove-btn {
+   background-color: #dc3545;
+}
+
+.product-item button:hover,
+.current-sale button:hover {
+  background-color: #0056b3;
+}
+.current-sale .remove-btn:hover {
+    background-color: #c82333;
+}
+
+.total-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid #eee;
+  text-align: right;
+}
+
+.total-section h3 {
+  margin-bottom: 1rem;
+}
+
+.total-section button {
+   margin-left: 1rem; /* Space between total and buttons */
+}
+
+/* Products Page Specific */
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.products-table th, .products-table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.products-table th {
+  background-color: #f2f2f2;
+}
+
+/* Transaction History Specific */
+.transaction-list {
+  list-style: none;
+  padding: 0;
+}
+
+.transaction-item {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.transaction-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.transaction-item p {
+  margin: 0.3rem 0;
+}
+.transaction-item ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+/* Transaction History Specific */
+.transaction-list {
+  list-style: none;
+  padding: 0;
+}
+
+.transaction-item {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.transaction-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.transaction-item p {
+  margin: 0.3rem 0;
+}
+.transaction-item > ul { /* Target direct child ul (items list) */
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem; /* Add space before buttons */
+}
+
+/* New Styles for Transaction Buttons */
+.transaction-actions {
+  margin-top: 1rem; /* Space above the buttons */
+  padding-top: 0.5rem; /* Optional space if adding border */
+  /* border-top: 1px solid #eee; */ /* Optional separator line */
+  display: flex; /* Align buttons */
+  gap: 0.75rem; /* Space between buttons */
+}
+
+.transaction-actions button {
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.transaction-actions button:hover {
+  background-color: #dee2e6;
+  border-color: #bbb;
+}
