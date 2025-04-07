@@ -26,8 +26,8 @@ body {
   padding: 1.5rem 1rem; /* Adjust padding as needed */
   height: 100vh; /* Make sidebar full height */
   /* Optional: make it stay fixed while content scrolls */
-  /* position: sticky;
-     top: 0; */
+  position: sticky;
+     top: 0;
   box-sizing: border-box; /* Include padding in width calculation */
 }
 
@@ -35,7 +35,6 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  /* No longer need flex here, items will stack vertically by default */
 }
 
 .sidebar-nav ul li {
@@ -68,11 +67,11 @@ body {
 .page-container { /* Targets the <main> element */
   flex: 1; /* Takes up the remaining horizontal space */
   padding: 2rem; /* Padding for the content */
-  background-color: #fff; /* Keep white background distinct from body */
+  background-color: #f1f2f7; /* Keep white background distinct from body */
   box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* Optional subtle shadow */
   /* If sidebar is sticky, content needs its own scroll */
-  /* overflow-y: auto; */
-  /* height: 100vh; */ /* Needed if using sticky sidebar */
+  overflow-y: auto;
+  height: 100vh; /* Needed if using sticky sidebar */
   box-sizing: border-box;
 }
 
@@ -152,16 +151,17 @@ h1, h2 {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
+  /* background-color: #f2f2f2; */
 }
 
 .products-table th, .products-table td {
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   padding: 0.8rem;
   text-align: left;
 }
 
 .products-table th {
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
 }
 
 /* Transaction History Specific */
@@ -225,7 +225,6 @@ h1, h2 {
 .transaction-actions {
   margin-top: 1rem; /* Space above the buttons */
   padding-top: 0.5rem; /* Optional space if adding border */
-  /* border-top: 1px solid #eee; */ /* Optional separator line */
   display: flex; /* Align buttons */
   gap: 0.75rem; /* Space between buttons */
 }

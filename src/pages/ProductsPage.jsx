@@ -15,7 +15,7 @@ function ProductsPage() {
 
   return (
     <div>
-      <h1>Product Management</h1>
+      <h2>Product Management</h2>
       <button onClick={addProduct} style={{ marginBottom: '1rem' }}>Add New Product</button>
       <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>
         Total Products Listed: {products.length}
@@ -23,7 +23,7 @@ function ProductsPage() {
       <table className="products-table">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>SKU</th>
             <th>Name</th>
             <th>Price</th>
             <th>Stock</th>

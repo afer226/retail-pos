@@ -114,7 +114,7 @@ function TransactionHistoryPage() {
 
   return (
     <div>
-      <h1>Transaction History</h1>
+      <h2>Transaction History</h2>
       {transactions.length === 0 ? (
         <p>No transactions recorded yet.</p>
       ) : (

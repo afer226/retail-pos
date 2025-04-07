@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-do
 import SellingPage from './pages/SellingPage';
 import ProductsPage from './pages/ProductsPage';
 import TransactionHistoryPage from './pages/TransactionHistoryPage';
+import CustomersPage from './pages/CustomersPage';
+import SettingsPage from './pages/SettingsPage';
+
 import './App.css'; // Import CSS
 
 function App() {
@@ -29,6 +32,16 @@ function App() {
                 History
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/customers" className={({ isActive }) => isActive ? "active" : ""}>
+                *Customers
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/settings" className={({ isActive }) => isActive ? "active" : ""}>
+                *Settings
+              </NavLink>
+            </li>
           </ul>
         </nav>
 
@@ -38,6 +51,9 @@ function App() {
             <Route path="/" element={<SellingPage />} />
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/history" element={<TransactionHistoryPage />} />
+            <Route path="/customers" element={<CustomersPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+
           </Routes>
         </main>
       </div>

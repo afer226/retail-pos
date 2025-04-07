@@ -75,11 +75,11 @@ function SellingPage() {
 
   return (
     <div>
-      <h1>Sell Screen</h1>
+      <h2>Sell Screen</h2>
       <div className="selling-layout">
         {/* Product List */}
         <div className="product-list">
-          <h2>Available Products</h2>
+          <h3>Available Products</h3>
           {products.map(product => (
             <div key={product.id} className="product-item">
               <span>{product.name} - ${product.price.toFixed(2)}</span>
